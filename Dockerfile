@@ -4,7 +4,7 @@ COPY . /go/src/
 WORKDIR /go/src
 RUN ./scripts/build.sh
 
-FROM alpine:latest
+FROM scratch
 WORKDIR /root
 COPY --from=builder /go/src/assignment .
 CMD ./assignment
